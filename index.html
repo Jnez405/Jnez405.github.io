@@ -1,120 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Jesus' Wrestlers</title>
     <style>
-        /* Add your CSS styles for the banner, search, and list items here */
-        body {
-            background-color: lightblue;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif; /* Set your preferred font family */
+        .message-container {
+            max-width: 800px; /* Adjust the max-width as needed */
+            margin: 0 auto; /* Center the container horizontally */
+            padding: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            color: var(--glow-color, #C69749);
+            animation: glowAnimation 2s infinite alternate;
         }
-
+    
+        .message-container h4 {
+            font-size: 24px; /* Adjust the font size as needed */
+            color: var(--glow-color, #C69749);
+        }
+    
+        .message-container p {
+            font-size: 16px; /* Adjust the font size as needed */
+            line-height: 1.5;
+            color: var(--glow-color, #C69749);
+        }
+  
         a {
-            color: #f8e16c; /* Set your preferred link color */
-            text-decoration: none; /* Remove underline */
-            font-size: 30px; /* Set your preferred font size */
-        }
-
-        a:hover {
-            color: #156064; /* Set link color on hover */
+    
+            text-decoration: none;
+            color: inherit; /* This ensures the link inherits the color from its parent */
         }
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-        body {
-            background-color: #00c49a; /* Set your desired background color */
-            margin: 0; /* Remove default body margin */
-            padding: 0; /* Remove default body padding */
-        }
-        header {
-            background-color: #156064;
-            color: #f8e16c;
-            padding: 10px;
-            text-align: center;
-            font-size: 30px;
-        }
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px;
-            display: inline-block;
-            text-align: center;
-        }
-        img {
-            max-width: 200px;
-            max-height: 200px;
-            border-radius: 10%;
-            cursor: pointer;
-        
-        }
-        p {
-            color: #073235; /* Set your preferred description color */
-            font-size: 20px; /* Set your preferred description font size */
-            line-height: 1.75; /* Set your preferred line height for better readability */
-       
-        }
-        footer a {
-            color: #f8e16c; /* Set link color for the footer */
-            font-size: 20px; /* Set font size for the footer link */
+            font-family: Georgia, serif;
+            background-color: #000000;
         }
 
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: right;
+            padding: 20px;
+            position: relative;
+            animation: glowAnimation 2s infinite alternate;
+        }
+
+        @keyframes glowAnimation {
+            0% {
+                box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 20px 10px var(--glow-color, #C69749);
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between; /* Adjusted to space items evenly */
+            align-items: center;
+        }
+
+        nav a {
+            color: #C69749;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        #glowColorInput {
+            padding: 8px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #C69749;
+            color: #fff;
+            padding: 8px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .content {
+            max-width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .description-container {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            animation: glowAnimation 2s infinite alternate;
+            margin: 0 auto;
+        }
+
+        .description {
+            display: flex;
+            align-items: center;
+        }
+
+        .description img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+
+        .description-content {
+            flex: 1;
+        }
+
+        .description h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: var(--glow-color, #C69749);
+            text-align: center;
+        }
+
+        .description p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--glow-color, #C69749);
+        }
+
+        h1,
+        p,
+        label {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #C69749;
+        }
+
+    
     </style>
 </head>
+
 <body>
 
-    <!-- Banner -->
     <header>
-        <h1>Jesus' Favorite Pro-Wrestlers </h1>
+        <nav>
+            <div>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div>
+                <label for="glowColorInput">Glow Color:</label>
+                <input type="text" id="glowColorInput" placeholder="Enter color">
+                <button onclick="changeGlowColor()">Apply Glow Color</button>
+            </div>
+        </nav>
     </header>
-
-    <!-- List of Names with Images -->
-    <section>
-        <ul>
-            <li>
-                <a href="page1.html">
-                    <img src="https://i.imgur.com/6qNNXz1.jpg" alt="Person 1">
-                    <figcaption>
-                        <a href="page1.html">Eddie Gurrero</a>
-                        <p>A highly celebrated Mexican-American professional wrestler whose impact on the world of wrestling transcended his time in the ring. Born into the legendary Guerrero wrestling family, Eddie's career was marked by his extraordinary in-ring abilities, combining technical prowess with charismatic performances that endeared him to fans globally. Renowned for his agility and versatility, he achieved success in major promotions such as WCW and WWE, where he captured the hearts of audiences with his captivating persona. Guerrero's crowning achievement came in 2004 when he won the WWE Championship, solidifying his status as one of the industry's all-time greats. Beyond his wrestling prowess, Eddie Guerrero's legacy also encompasses his resilience in overcoming personal struggles, making him an inspiration to many. His untimely passing in 2005 left an indelible void, but his memory lives on through the countless unforgettable moments and the lasting impact he made on the wrestling community.</p>
-                    </figcaption>
-                </a>
-            </li>
-            <li>
-                <a href="page2.html">
-                    <img src="https://i.imgur.com/XZa2iWv.jpg" alt="Person 2">
-                    <figcaption>
-                        <a href="page2.html">Rey Mysterio</a>
-                        <p>A legendary Mexican-American professional wrestler known for his high-flying and acrobatic wrestling style. Born on December 11, 1974, Rey Mysterio has made a significant impact in various wrestling promotions, including WCW and WWE. Recognizable for his distinctive masks and colorful attire, Rey has become a fan favorite over the years. His remarkable agility and innovative maneuvers, such as the 619, have earned him a reputation as one of the most exciting and dynamic performers in the history of professional wrestling. Rey Mysterio's career has spanned decades, and his legacy extends beyond the ring, influencing aspiring wrestlers and leaving an indelible mark on the world of sports entertainment.</p>
-                    </figcaption>
-                </a>
-            </li>
-            <li>
-                <a href="page3.html">
-                    <img src="https://bloximages.newyork1.vip.townnews.com/postandcourier.com/content/tncms/assets/v3/editorial/c/92/c92d09ee-ae7f-11eb-b032-4706af4d89c2/60940b543406e.image.jpg?resize=500%2C500" alt="Person 3">
-                    <figcaption>
-                        <a href="page3.html">"Macho Man" Randy Savage</a>
-                        <p> An iconic and flamboyant professional wrestler who left an enduring impact on the world of sports entertainment. Born on November 15, 1952, Savage was known for his charismatic personality, colorful outfits, and distinctive deep voice. With a career spanning several decades, he achieved great success in promotions like WWE (World Wrestling Entertainment) and WCW (World Championship Wrestling). Savage's in-ring prowess and signature moves, including the flying elbow drop, thrilled audiences worldwide. Beyond his wrestling persona, he also ventured into entertainment, making appearances in films and television. "Macho Man" Randy Savage's larger-than-life presence and memorable moments have solidified his status as one of the most beloved and iconic figures in the history of professional wrestling.</p>
-                    </figcaption>
-                </a>
-            </li>
-            <!-- Add more list items as needed -->
-        </ul>
-    </section>
     
-    <footer>
-        <p>&copy; 2024 Jesus Ordunez - <a href="page1.html">My Github</a></p>
-    </footer>
+ <!-- Dynamic component: Add a form with a checkbox -->
+ <div class="dynamic-content">
+    <form id="dynamicForm">
+        <label>
+            <input type="checkbox" id="showMessage"> Show Message
+        </label>
+    </form>
+</div>
+</main>
+    <main class="content">
+        <div class="description-container">
+            <div class="description">
+                <a href="https://youtu.be/vpzv-UH5NGo?feature=shared&t=188" onclick="confirmNavigation('Eddie Guerrero')">
+                    <h2>Eddie Guerrero</h2>
+                    <img src="https://i.imgur.com/6qNNXz1.jpg" alt="Eddie Guerrero">
+                </a>
+                <div class="description-content">
+                    <p>Eddie Guerrero, a revered WWE Superstar, was known for his dynamic wrestling style, charismatic persona,
+                        and his deep connection to his Mexican heritage. Standing at 5'8", Eddie's athleticism and
+                        versatility in the ring made him a standout performer. Beyond his professional success, he faced
+                        personal struggles with addiction, turning his battles into a compelling narrative of redemption.
+                        Eddie's triumph over his demons was highlighted by his historic victory for the WWE Championship in
+                        2004. His representation of Mexican pride, symbolized by his entrance theme "Latino Heat" and
+                        carrying the Mexican flag, resonated with fans. Eddie Guerrero's legacy is not only one of wrestling
+                        excellence but also a testament to resilience and overcoming personal challenges, making him a
+                        beloved figure in WWE history. Tragically, he passed away on November 13, 2005, leaving behind an
+                        enduring impact on the wrestling world.</p>
+                </div>
+            </div>
+        </div>
+        <div class="description-container">
+            <div class="description">
+                <a href="https://www.youtube.com/watch?v=fn9BCxAG8nQ" onclick="confirmNavigation('Rey Mysterio')">
+                    <h2>Rey Mysterio</h2>
+                    <img src="https://i.imgur.com/XZa2iWv.jpg" alt="Rey Mysterio">
+                </a>
+                <div class="description-content">
+                    <p>Rey Mysterio, a legendary WWE Superstar, is an iconic figure known for his high-flying acrobatics,
+                        lightning-fast agility, and distinctive lucha libre style. Despite his smaller stature at 5'6",
+                        Mysterio transcended the limitations of his size and became an inspiration to the underdog. His
+                        captivating performances in the ring showcased a unique blend of athleticism and technical skill.
+                        Rey Mysterio's ability to defy expectations and consistently deliver awe-inspiring maneuvers
+                        endeared him to fans worldwide. His story is one of triumph against the odds, proving that size is
+                        not a limitation in the world of professional wrestling. Rey Mysterio's impact extends beyond
+                        championships; he symbolizes the spirit of the little guy overcoming adversity and emerging
+                        victorious in the world of giants, leaving an indelible mark on the hearts of fans who looked up to
+                        him as a true inspiration.</p>
+                </div>
+            </div>
+        </div>
+        <div class="description-container">
+            <div class="description">
+                <a href="https://www.youtube.com/watch?v=8C4lK41SX-Q" onclick="confirmNavigation('Macho Man Randy Savage')">
+                    <h2>"Macho Man"</h2>
+                    <h2>Randy Savage</h2>
+                    <img
+                        src="https://bloximages.newyork1.vip.townnews.com/postandcourier.com/content/tncms/assets/v3/editorial/c/92/c92d09ee-ae7f-11eb-b032-4706af4d89c2/60940b543406e.image.jpg?resize=500%2C500"
+                        alt="Macho Man Randy Savage">
+                </a>
+                <div class="description-content">
+                    <p>Macho Man Randy Savage, born Randy Poffo, was a flamboyant and iconic WWE Superstar known for his
+                        larger-than-life personality and unparalleled charisma. Standing out with his distinctive raspy
+                        voice, colorful outfits, and trademark sunglasses, Savage was not only a phenomenal wrestler but
+                        also an over-the-top and hilarious entertainer. With his charismatic interviews punctuated by
+                        memorable catchphrases like "Oh yeah!" and "Snap into a Slim Jim!", Macho Man captivated audiences
+                        with his dynamic presence. His in-ring style, characterized by intense athleticism and showmanship,
+                        complemented his outlandish persona. Savage's ability to blend athleticism with a comedic flair made
+                        him a standout performer, and he truly entertained the masses, leaving an indelible mark on the
+                        world of professional wrestling as one of its most unforgettable characters.</p>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+        function confirmNavigation(wrestlerName) {
+            const confirmation = window.confirm(`You are about to be taken to a video for ${wrestlerName}. Are you ready?`);
+    
+            if (confirmation) {
+                // User clicked OK, navigate to the link
+                window.location.href = event.currentTarget.href;
+            } else {
+                // User clicked Cancel, do nothing
+                event.preventDefault();
+            }
+        }
+    </script>
+
+    <script>
+        function changeGlowColor() {
+            const glowColorInput = document.getElementById('glowColorInput').value.trim();
+            document.documentElement.style.setProperty('--glow-color', glowColorInput);
+        }
+         // Dynamic component: Use a conditional statement to show/hide a message
+         document.getElementById('dynamicForm').addEventListener('change', function () {
+    const showMessageCheckbox = document.getElementById('showMessage');
+    const dynamicContent = document.querySelector('.dynamic-content');
+
+    if (showMessageCheckbox.checked) {
+        dynamicContent.innerHTML = 
+            '<div class="message-container">' +
+                '<h4>Favorite Wrestlers</h4>' +
+                '<p>"Welcome to my webpage dedicated to my favorite wrestlers. These extraordinary athletes possess not only amazing athletic abilities but also a unique talent for storytelling. Whether delivering flamboyant promos or heartfelt redemption stories, they captivate audiences like skilled actors. Beyond their in-ring prowess, these wrestlers master the art of character development. From carefully chosen theme music to thoughtfully curated attire, every detail reflects the essence of their persona. Join me in exploring the world of these exceptional individuals who seamlessly blend athleticism with character portrayal in the thrilling realm of professional wrestling."</p>' +
+            '</div>';
+        
+        // Apply the glow color to the message container
+        const glowColor = getComputedStyle(document.documentElement).getPropertyValue('--glow-color');
+        dynamicContent.querySelector('.message-container').style.boxShadow = `0 0 20px 10px ${glowColor}`;
+    } else {
+        dynamicContent.innerHTML = ''; // Clear the message if the checkbox is unchecked
+    }
+});
+
+    </script>
 </body>
+
 </html>
