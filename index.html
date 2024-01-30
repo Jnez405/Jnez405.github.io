@@ -164,14 +164,16 @@
     </header>
     
  <!-- Dynamic component: Add a form with a checkbox -->
- <div class="dynamic-content">
-    <form id="dynamicForm">
-        <label>
-            <input type="checkbox" id="showMessage"> Show Message
-        </label>
-    </form>
-</div>
+  <main class="content">
+    <div class="dynamic-content">
+        <form id="dynamicForm">
+            <label>
+                <input type="checkbox" id="showMessage"> Show Message
+            </label>
+        </form>
+    </div>
 </main>
+
     <main class="content">
         <div class="description-container">
             <div class="description">
@@ -237,47 +239,9 @@
         </div>
         
     </main>
+  
+    <script src="web-script.js"></script>
 
-    <script>
-        function confirmNavigation(wrestlerName) {
-            const confirmation = window.confirm(`You are about to be taken to a video for ${wrestlerName}. Are you ready?`);
-    
-            if (confirmation) {
-                // User clicked OK, navigate to the link
-                window.location.href = event.currentTarget.href;
-            } else {
-                // User clicked Cancel, do nothing
-                event.preventDefault();
-            }
-        }
-    </script>
-
-    <script>
-        function changeGlowColor() {
-            const glowColorInput = document.getElementById('glowColorInput').value.trim();
-            document.documentElement.style.setProperty('--glow-color', glowColorInput);
-        }
-         // Dynamic component: Use a conditional statement to show/hide a message
-         document.getElementById('dynamicForm').addEventListener('change', function () {
-    const showMessageCheckbox = document.getElementById('showMessage');
-    const dynamicContent = document.querySelector('.dynamic-content');
-
-    if (showMessageCheckbox.checked) {
-        dynamicContent.innerHTML = 
-            '<div class="message-container">' +
-                '<h4>Favorite Wrestlers</h4>' +
-                '<p>"Welcome to my webpage dedicated to my favorite wrestlers. These extraordinary athletes possess not only amazing athletic abilities but also a unique talent for storytelling. Whether delivering flamboyant promos or heartfelt redemption stories, they captivate audiences like skilled actors. Beyond their in-ring prowess, these wrestlers master the art of character development. From carefully chosen theme music to thoughtfully curated attire, every detail reflects the essence of their persona. Join me in exploring the world of these exceptional individuals who seamlessly blend athleticism with character portrayal in the thrilling realm of professional wrestling."</p>' +
-            '</div>';
-        
-        // Apply the glow color to the message container
-        const glowColor = getComputedStyle(document.documentElement).getPropertyValue('--glow-color');
-        dynamicContent.querySelector('.message-container').style.boxShadow = `0 0 20px 10px ${glowColor}`;
-    } else {
-        dynamicContent.innerHTML = ''; // Clear the message if the checkbox is unchecked
-    }
-});
-
-    </script>
 </body>
 
 </html>
