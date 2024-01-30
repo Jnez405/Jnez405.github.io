@@ -13,7 +13,7 @@ function confirmNavigation(wrestlerName) {
 function changeGlowColor() {
     const glowColorInput = document.getElementById('glowColorInput').value.trim();
     document.documentElement.style.setProperty('--glow-color', glowColorInput);
-}
+    }
 
 function showMessage() {
     const dynamicContent = document.querySelector('.dynamic-content');
@@ -58,3 +58,37 @@ function validateGlowColorInput() {
 
 // Attach the validation function to the button click event
 document.getElementById('glowColorInput').addEventListener('change', validateGlowColorInput);
+
+// Function to display images based on the rating
+function displayImages(starRating) {
+    const imageContainer = document.getElementById("imageContainer");
+    const imageSource = "https://static.wikia.nocookie.net/bwwe/images/0/02/WWE_Championship.png/revision/latest?cb=20190601220523"; // Replace with your actual image URL
+
+    imageContainer.innerHTML = ""; // Clear previous images
+    for (let i = 0; i < starRating; i++) {
+        let img = document.createElement("img");
+        img.src = imageSource;
+        img.alt = "Championship Belt Image";
+        img.style.maxWidth = "100px"; // Adjust as needed
+        imageContainer.appendChild(img);
+    }
+
+    // Display the number of images
+    let numImagesMessage = document.createElement("p");
+    numImagesMessage.textContent = `You gave me ${starRating} championship belts`;
+    imageContainer.appendChild(numImagesMessage);
+}
+
+// Function to handle the rating submission
+function submitRating() {
+    const starRating = parseInt(document.getElementById("starRatingInput").value, 10);
+
+    if (isNaN(starRating) || starRating < 1 || starRating > 5) {
+        alert("Invalid star rating. Please enter a number between 1 and 5.");
+    } else {
+        displayImages(starRating);
+    }
+}
+
+// Call the changeGlowColor function on page load or as needed
+changeGlowColor();
