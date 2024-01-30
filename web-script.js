@@ -1,3 +1,23 @@
+
+function BeltCt() {
+    let BeltNum = prompt("I only have 10 Championships belts, how many do You want?");
+
+    if (BeltNum > 0 && BeltNum < 11) {
+        alert("Ok, here ya go");
+        let printCount = BeltNum;
+        let imageUrl = "https://upload.wikimedia.org/wikipedia/en/6/63/World_Heavyweight_Championship_WWE_2023.png";
+
+        for (let i = printCount; i > 0; i--) {
+            // Use the online image URL in the src attribute
+            document.write(`<img src="${'https://upload.wikimedia.org/wikipedia/en/6/63/World_Heavyweight_Championship_WWE_2023.png'}" alt="Championship Belt img">`);
+            console.log("Round: ", i);
+        }
+    } else {
+        alert("Sorry, can't do that try again!");
+        BeltCt();
+    }
+}
+
 function confirmNavigation(wrestlerName) {
     const confirmation = window.confirm(`You are about to be taken to a video for ${wrestlerName}. Are you ready?`);
 
@@ -58,37 +78,3 @@ function validateGlowColorInput() {
 
 // Attach the validation function to the button click event
 document.getElementById('glowColorInput').addEventListener('change', validateGlowColorInput);
-
-// Function to display images based on the rating
-function displayImages(starRating) {
-    const imageContainer = document.getElementById("imageContainer");
-    const imageSource = "https://i0.wp.com/wwechampionshipbelt.com/wp-content/uploads/2022/04/roman-reign-belt-2022.jpeg?fit=1280%2C609&ssl=1"; // Replace with your actual image URL
-
-    imageContainer.innerHTML = ""; // Clear previous images
-    for (let i = 0; i < starRating; i++) {
-        let img = document.createElement("img");
-        img.src = imageSource;
-        img.alt = "Championship Belt Image";
-        img.style.maxWidth = "100px"; // Adjust as needed
-        imageContainer.appendChild(img);
-    }
-
-    // Display the number of images
-    let numImagesMessage = document.createElement("p");
-    numImagesMessage.textContent = `You gave me ${starRating} championship belts`;
-    imageContainer.appendChild(numImagesMessage);
-}
-
-// Function to handle the rating submission
-function submitRating() {
-    const starRating = parseInt(document.getElementById("starRatingInput").value, 10);
-
-    if (isNaN(starRating) || starRating < 1 || starRating > 5) {
-        alert("Invalid star rating. Please enter a number between 1 and 5.");
-    } else {
-        displayImages(starRating);
-    }
-}
-
-// Call the changeGlowColor function on page load or as needed
-changeGlowColor();
