@@ -141,6 +141,17 @@
             line-height: 1.5;
             color: #C69749;
         }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: var(--glow-color, #C69749);
+        }
+
+        footer a {
+            color: var(--glow-color, #C69749);
+        }
+        
 
     
     </style>
@@ -151,9 +162,8 @@
     <header>
         <nav>
             <div>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="https://jnez405.github.io/">Home</a>
+                <a href="https://github.com/Jnez405">My Github</a>
             </div>
             <div>
                 <label for="glowColorInput">Glow Color:</label>
@@ -237,7 +247,14 @@
                 </div>
             </div>
         </div>
+        <main class="content">
+            <!-- Existing content... -->
         
+            <h1>How many championship belts would you give this page (1-5):</h1>
+            <input type="number" id="starRatingInput" placeholder="Enter star rating">
+            <button onclick="submitRating()">Submit Rating</button>
+            <div id="imageContainer"></div>
+        </main>
     </main>
   
     <script src="web-script.js"></script>
