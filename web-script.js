@@ -62,7 +62,7 @@ document.getElementById('glowColorInput').addEventListener('change', validateGlo
 // Function to display images based on the rating
 function displayImages(starRating) {
     const imageContainer = document.getElementById("imageContainer");
-    const imageSource = "https://static.wikia.nocookie.net/bwwe/images/0/02/WWE_Championship.png/revision/latest?cb=20190601220523"; // Replace with your actual image URL
+    const imageSource = "https://i0.wp.com/wwechampionshipbelt.com/wp-content/uploads/2022/04/roman-reign-belt-2022.jpeg?fit=1280%2C609&ssl=1"; // Replace with your actual image URL
 
     imageContainer.innerHTML = ""; // Clear previous images
     for (let i = 0; i < starRating; i++) {
