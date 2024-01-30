@@ -142,16 +142,22 @@
             color: #C69749;
         }
         footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
+            max-width: 800px; /* Adjust the max-width as needed */
+            margin: 0 auto; /* Center the container horizontally */
+            padding: 20px;
+            border-radius: 8px;
             color: var(--glow-color, #C69749);
+            animation: glowAnimation 2s infinite alternate;
         }
 
         footer a {
             color: var(--glow-color, #C69749);
         }
-        
+        footer img {
+            display: inline;
+            padding-top: 20px;
+            width: 200px;
+        }
 
     
     </style>
@@ -183,7 +189,7 @@
         </form>
     </div>
 </main>
-
+<script src="web-script.js"></script>
     <main class="content">
         <div class="description-container">
             <div class="description">
@@ -247,17 +253,8 @@
                 </div>
             </div>
         </div>
-        <main class="content">
-            <!-- Existing content... -->
-        
-            <h1>How many championship belts would you give this page (1-5):</h1>
-            <input type="number" id="starRatingInput" placeholder="Enter star rating">
-            <button onclick="submitRating()">Submit Rating</button>
-            <div id="imageContainer"></div>
-        </main>
+        <footer><script> BeltCt();</script></footer>
     </main>
-  
-    <script src="web-script.js"></script>
 
 </body>
 
